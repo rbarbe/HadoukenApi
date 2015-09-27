@@ -246,6 +246,10 @@ namespace Hadouken.HadoukenApi
 
         private async Task<HttpResponseMessage> SendJsonrpcRequest(string methodName, object[] argParams = null)
         {
+            if (argParams == null)
+            {
+                argParams = new object[1];
+            }
             var request = new JsonrpcRequest
             {
                 Jsonrpc = "2.0",

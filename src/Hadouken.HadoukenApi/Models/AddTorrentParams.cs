@@ -4,6 +4,12 @@ namespace Hadouken.HadoukenApi.Models
 {
     public class AddTorrentParams
     {
+        public AddTorrentParams()
+        {
+            SavePath = "0";
+            SubPath = "";
+        }
+
         [JsonProperty("savePath")]
         public string SavePath { get; set; }
 
