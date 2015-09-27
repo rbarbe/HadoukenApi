@@ -79,6 +79,7 @@ namespace Hadouken.HadoukenApi.Test
 
             var resultAddTorrent = await api.AddTorrent(_freeMusicTorrentFile);
             Assert.True(resultAddTorrent);
+            Thread.Sleep(1500);
 
             var torrents = await api.GetTorrents();
             Assert.True(torrents.Count == 1);
@@ -89,6 +90,7 @@ namespace Hadouken.HadoukenApi.Test
             properties.Label = "free-music";
             var resultSetProperty = await api.SetProperties(_freeMusicTorrentHash, properties);
             Assert.True(resultSetProperty);
+            Thread.Sleep(1500);
             var torrentsAfterLabelChange = await api.GetTorrents();
             Assert.Equal(properties.Label, torrentsAfterLabelChange.First().Label);
 
