@@ -1,0 +1,26 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Hadouken.HadoukenApi test project",
+  "authors": [ "Roland Barbe" ],
+  "owners": [ "Roland Barbe" ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rbarbe/HadoukenApi"
+  },
+  "tags": [ "" ],
+  "projectUrl": "https://github.com/rbarbe/HadoukenApi",
+  "licenseUrl": "https://raw.githubusercontent.com/rbarbe/HadoukenApi/master/LICENSE",
+  "dependencies": {
+    "Microsoft.Framework.Configuration": "1.0.0-beta7",
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta7",
+    "Hadouken.HadoukenApi": "1.0.0-*",
+    "xunit": "2.1.0-rc1-build3168",
+    "xunit.runner.dnx": "2.1.0-beta5-build169"
+  },
+  "commands": {
+    "test": "xunit.runner.dnx -parallel none"
+  },
+  "frameworks": {
+    "dnxcore50" : { }
+  }
+}

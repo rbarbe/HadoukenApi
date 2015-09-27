@@ -1,0 +1,5 @@
+﻿{
+    "ServerCredentialUri": "http://localhost:7070",
+    "ServerCredentialUsername": "admin",
+    "ServerCredentialPassword": "admin"
+}
