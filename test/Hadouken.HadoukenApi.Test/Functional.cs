@@ -105,6 +105,7 @@ namespace Hadouken.HadoukenApi.Test
 
             var deleteResult = await api.Perform(Action.Removedata, _freeMusicTorrentHash);
             Assert.True(deleteResult);
+            Thread.Sleep(1500);
             Assert.True((await api.GetTorrents()).Count == 0);
         }
     }
