@@ -1,0 +1,20 @@
+version: 1.0.{build}
+os: Visual Studio 2015
+install:
+- ps: >-
+    appveyor DownloadFile https://github.com/hadouken/hadouken/releases/download/v5.2.0/hadouken-5.2.0.msi -FileName hadouken.msi
+
+    msiexec /i hadouken.msi /qn /norestart /l*v install.log HDKN_HTTP_AUTH=basic HDKN_HTTP_BASIC_USERNAME=admin HDKN_HTTP_BASIC_PASSWORD=admin HDKN_DATA_PATH=C:/ProgramData/Hadouken HDKN_BITTORRENT_SAVE_PATH_REPLACED=c:/Downloads
+
+    ./InstallDnx.ps1
+
+    appveyor PushArtifact install.log
+build:
+  verbosity: minimal
+after_build:
+- dnu pack --framework dotnet --configuration release src/Hadouken.HadoukenApi
+test_script:
+- dnx --project test/Hadouken.HadoukenApi.Test test
+artifacts:
+- path: src/Hadouken.HadoukenApi/bin/release/*.nupkg
+  name: Hadouken.HadoukenApi

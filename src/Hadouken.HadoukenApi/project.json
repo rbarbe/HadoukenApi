@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0-*",
+  "title": "Hadouken Web Api Client",
+  "description": "Http Client for the Hadouken Web Api using System.Net.Http",
+  "authors": [ "Roland Barbe", "Viktor Elofsson" ],
+  "owners": [ "Roland Barbe", "Viktor Elofsson" ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rbarbe/HadoukenApi"
+  },
+  "tags": [ "Hadouken", "Hdkn", "bittorent", "torrent" ],
+  "projectUrl": "https://github.com/rbarbe/HadoukenApi",
+  "licenseUrl": "https://raw.githubusercontent.com/rbarbe/HadoukenApi/master/LICENSE",
+  "supports": {
+    "net46.app": {},
+    "uwp.10.0.app": {},
+    "dnxcore50.app": {}
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "7.0.1",
+    "System.Net.Http": "4.0.0",
+    "System.Runtime.Extensions": "4.0.10",
+    "System.Collections": "4.0.10",
+    "System.Linq": "4.0.0",
+    "System.Dynamic.Runtime": "4.0.10",
+    "System.Net.Primitives": "4.0.10"
+  },
+  "frameworks": {
+    "dotnet": {
+      "imports": "portable-net452+win81"
+    },
+    "dnxcore50": { }
+  }
+}
