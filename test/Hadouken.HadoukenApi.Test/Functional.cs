@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Dnx.Runtime;
+using Microsoft.Dnx.Runtime.Infrastructure;
 using Microsoft.Framework.Configuration;
 using Xunit;
 using Action = Hadouken.HadoukenApi.Models.Action;
@@ -16,7 +19,9 @@ namespace Hadouken.HadoukenApi.Test
 
         public Functional()
         {
-            var builder = new ConfigurationBuilder(".");
+            var appEnv = CallContextServiceLocator.Locator.ServiceProvider.GetService(typeof(IApplicationEnvironment)) as IApplicationEnvironment;
+            Debug.Assert(appEnv != null, "appEnv != null");
+            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath);
             builder.AddJsonFile("config.json");
             builder.AddJsonFile("config.private.json", true);
             var configuration = builder.Build();
