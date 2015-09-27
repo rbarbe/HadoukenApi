@@ -41,8 +41,11 @@ namespace Hadouken.HadoukenApi.Test
             // Make sure there is no torrents before executing the tests
             var api = new Api(_serverCredential);
             var torrents = api.GetTorrents().Result;
-            var result = api.Perform(Action.Removedata, torrents.Select(t => t.InfoHash)).Result;
-            Assert.True(result);
+            if (torrents.Any())
+            {
+                var result = api.Perform(Action.Removedata, torrents.Select(t => t.InfoHash)).Result;
+                Assert.True(result);
+            }
         }
 
         [Fact]
