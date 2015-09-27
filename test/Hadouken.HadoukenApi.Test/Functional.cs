@@ -69,6 +69,7 @@ namespace Hadouken.HadoukenApi.Test
             {
                 Assert.False(string.IsNullOrWhiteSpace(result.First().Path));
                 Assert.True(result.First().Available > 0);
+                Thread.Sleep(2 * 1000);
             }
         }
 
@@ -79,7 +80,7 @@ namespace Hadouken.HadoukenApi.Test
 
             var resultAddTorrent = await api.AddTorrent(_freeMusicTorrentFile);
             Assert.True(resultAddTorrent);
-            Thread.Sleep(1500);
+            Thread.Sleep(60*1000);
 
             var torrents = await api.GetTorrents();
             Assert.True(torrents.Count == 1);
