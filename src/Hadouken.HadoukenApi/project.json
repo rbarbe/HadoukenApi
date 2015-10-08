@@ -16,19 +16,31 @@
     "uwp.10.0.app": {},
     "dnxcore50.app": {}
   },
-  "dependencies": {
-    "Newtonsoft.Json": "7.0.1",
-    "System.Net.Http": "4.0.0",
-    "System.Runtime.Extensions": "4.0.10",
-    "System.Collections": "4.0.10",
-    "System.Linq": "4.0.0",
-    "System.Dynamic.Runtime": "4.0.10",
-    "System.Net.Primitives": "4.0.10"
-  },
   "frameworks": {
     "dotnet": {
-      "imports": "portable-net452+win81"
+      "imports": "portable-net452+win81",
+      "dependencies": {
+        "Newtonsoft.Json": "7.0.1",
+        "System.Net.Http": "4.0.0",
+        "System.Runtime.Extensions": "4.0.10",
+        "System.Collections": "4.0.10",
+        "System.Linq": "4.0.0",
+        "System.Dynamic.Runtime": "4.0.10",
+        "System.Threading.Tasks": "4.0.10",
+        "System.Net.Primitives": "4.0.10"
+      }
     },
-    "dnxcore50": { }
+    "dnxcore50": { 
+      "dependencies": {
+        "Newtonsoft.Json": "7.0.1",
+        "System.Net.Http": "4.0.1-*",
+        "System.Runtime.Extensions": "4.0.11-*",
+        "System.Collections": "4.0.11-*",
+        "System.Linq": "4.0.1-*",
+        "System.Dynamic.Runtime": "4.0.11-*",
+        "System.Threading.Tasks": "4.0.11-*",
+        "System.Net.Primitives": "4.0.11-*"
+      }
+    }
   }
 }
